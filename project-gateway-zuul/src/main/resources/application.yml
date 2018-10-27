@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: project-gateway-zuul
+
+zuul:
+  routes:
+    demo01:
+      path: /demo01/**
+      url: http://localhost:8091/
+    module02:
+      path: /module02/**
+      serviceId: project-module02
+    w163:
+      path: /163
+      url: http://www.163.com/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
